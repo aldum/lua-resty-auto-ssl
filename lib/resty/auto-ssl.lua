@@ -44,6 +44,10 @@ function _M.new(options)
     options["renew_check_interval"] = 86400 -- 1 day
   end
 
+  if not options["renew_before_expiry_days"] then
+    options["renew_before_expiry_days"] = 30
+  end
+
   if not options["hook_server_port"] then
     options["hook_server_port"] = 8999
   end

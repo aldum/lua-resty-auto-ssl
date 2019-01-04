@@ -174,12 +174,23 @@ auto_ssl:set("dir", "/some/other/location")
 ### `renew_check_interval`
 *Default:* `86400`
 
-How frequently (in seconds) all of the domains should be checked for certificate renewals. Defaults to checking every 1 day. Certificates will automatically be renewed if the expire in less than 30 days.
+How frequently (in seconds) all of the domains should be checked for certificate renewals. Defaults to checking every 1 day. Certificates will automatically be renewed if the expire in less than 30 days, or otherwise configured (see next item).
 
 *Example:*
 
 ```lua
 auto_ssl:set("renew_check_interval", 172800)
+```
+
+### `renew_before_expiry_days`
+*Default:* `30`
+
+How many days before expiry should certificates be renewed. Defaults to 30 days.
+
+*Example:*
+
+```lua
+auto_ssl:set("renew_before_expiry_days", 7)
 ```
 
 ### `storage_adapter`
